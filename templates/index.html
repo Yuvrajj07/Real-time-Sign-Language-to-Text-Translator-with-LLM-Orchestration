@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Language Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Real-time Sign Language to Text</h1>
+        <nav>
+            <a href="/">Detect</a>
+            <a href="/capture">Capture Gestures</a>
+            <a href="/train">Train Model</a>
+        </nav>
+    </header>
+    <main class="detection-page">
+        <h2>Live Gesture Detection</h2>
+        <div class="video-container">
+            <img id="videoFeedDetect" src="{{ url_for('video_feed_detect') }}" alt="Live Video Feed">
+        </div>
+        <div class="status-message" id="detectionStatus">
+            Loading detector...
+        </div>
+        
+        <div class="capture-controls">
+            <button id="saveWordButton">Save Recognized Word</button>
+            <button id="deleteLastWordButton" style="background-color: #dc3545;">Delete Last Word</button>
+            <button id="generateSentenceButton" style="background-color: #ffc107; color: #333;">Generate Sentence</button>
+        </div>
+        
+        <div class="training-info" style="max-width: 800px; margin-top: 20px;">
+            <h3>Words Recognized:</h3>
+            <p id="wordsRecognizedDisplay" style="font-size: 1.5em; font-weight: bold; color: #28a745; min-height: 24px;">
+                </p>
+            <hr style="border-top: 1px dashed #ccc;">
+            <h3>Possible Sentence:</h3>
+            <p id="savedSentenceDisplay" style="font-size: 1.2em; color: #007bff; min-height: 24px;">
+                </p>
+        </div>
+        </main>
+    <footer>
+        <p>&copy; 2025 Sign Language App</p>
+    </footer>
+    <script src="{{ url_for('static', filename='js/detect.js') }}"></script>
+</body>
+</html>
