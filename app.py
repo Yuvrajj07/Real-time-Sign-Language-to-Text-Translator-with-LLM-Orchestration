@@ -6,7 +6,7 @@ import mediapipe as mp
 import numpy as np
 import pandas as pd
 import tensorflow as tf
-import pyttsx3              # ✅ Add this import
+import pyttsx3             
 import re
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import LSTM, Dense, Dropout
